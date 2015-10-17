@@ -1,6 +1,6 @@
 import Image
 
-def combineImages(){
+def combineImages():
     initialImage = Image.open("image.jpg")
     #inImageSize = initialImage.size()
     stickerImage = Image.open("images/creepy.png")
@@ -13,5 +13,4 @@ def combineImages(){
 
     result.save('Blended.png')
 
-}
 
