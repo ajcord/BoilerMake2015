@@ -23,7 +23,7 @@ def capture_loop():
             print("Starting countdown")
             time.sleep(3)
             print("Smile!")
-            camera_capture("image.jpg")
+            camera.capture("image.jpg")
             # upload_to_server("image.jpg")
 
         pad0alreadyPressed = pad0pressed
