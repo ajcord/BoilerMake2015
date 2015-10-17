@@ -3,6 +3,7 @@ import time
 import picamera
 import twitterpost
 import text_pool_selector
+import combine_images
 
 
 def capture_loop():
@@ -38,6 +39,7 @@ def capture_loop():
             GPIO.output(led, False)
             # upload_to_server("image.jpg")
             twitterpost.push_post("image.jpg", text_pool_selector.getRandomQuote())
+            combine_images.combineImages()
 
         pad0alreadyPressed = pad0pressed
 
