@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 import picamera
+import post
 
 def capture_loop():
 
