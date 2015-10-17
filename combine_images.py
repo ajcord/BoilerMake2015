@@ -8,9 +8,12 @@ def combineImages():
     a = initialImage.load() #loads pixel data
     b = stickerImage.load()
 
+    result = initialImage.copy()
+    array = []
+
     for w in stickerSize[0] :#width
         for h in stickerSize[1] : #height
-            a[w, h] = (a[w,h] * 0.5() + (b[w,h] * 0.5)
+            array[w, h] = (a[w,h] * 0.5() + (b[w,h] * 0.5)
 
-
-    initialImage.save("blended.jpg", "JPEG")
+    result.putdata(array)
+    result.save("blended", "JPEG")
