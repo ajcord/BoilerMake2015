@@ -13,4 +13,4 @@ def combineImages():
             a[w, h] = (a[w,h] * 0.5() + (b[w,h] * 0.5)
 
 
-    initialImage.save("Blended.png")
+    initialImage.save("blended.jpg")
