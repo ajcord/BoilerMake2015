@@ -15,24 +15,24 @@ def capture_loop():
     
     GPIO.setup(pad0, GPIO.IN)
     GPIO.setup(led, GPIO.OUT)
-    
+
     pad0alreadyPressed = False
-    
+    GPIO.output(led, False)
      
     while True:
         pad0pressed = not GPIO.input(pad0)
         
         if pad0pressed and not pad0alreadyPressed:
-            GPIO.out(led, True)
+            GPIO.output(led, True)
             print("Starting countdown")
             time.sleep(2)
-            GPIO.out(led, False)
+            GPIO.output(led, False)
             print("Smile!")
             time.sleep(0.5)
-            GPIO.out(led, True)
+            GPIO.output(led, True)
             camera.capture("image.jpg")
             time.sleep(0.5)
-            GPIO.out(led, False)
+            GPIO.output(led, False)
             # upload_to_server("image.jpg")
             post.push_post("image.jpg", "Test")
 
