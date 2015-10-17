@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 import picamera
+import post
 
 def capture_loop():
 
@@ -10,8 +11,10 @@ def capture_loop():
 
     # Set the GPIO input pins
     pad0 = 22
+    led = 17
     
     GPIO.setup(pad0, GPIO.IN)
+    GPIO.setup(led, GPIO.OUT)
     
     pad0alreadyPressed = False
     
@@ -20,10 +23,21 @@ def capture_loop():
         pad0pressed = not GPIO.input(pad0)
         
         if pad0pressed and not pad0alreadyPressed:
-            time.sleep(3)
-            camera_capture("image.jpg")
-            upload_to_server("image.jpg")
+            GPIO.out(led, True)
+            print("Starting countdown")
+            time.sleep(2)
+            GPIO.out(led, False)
+            print("Smile!")
+            time.sleep(0.5)
+            GPIO.out(led, True)
+            camera.capture("image.jpg")
+            time.sleep(0.5)
+            GPIO.out(led, False)
+            # upload_to_server("image.jpg")
+            post.push_post("image.jpg", "Test")
 
         pad0alreadyPressed = pad0pressed
         
         time.sleep(0.1)
+
+capture_loop()
