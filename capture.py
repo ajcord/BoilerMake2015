@@ -20,10 +20,14 @@ def capture_loop():
         pad0pressed = not GPIO.input(pad0)
         
         if pad0pressed and not pad0alreadyPressed:
+            print("Starting countdown")
             time.sleep(3)
+            print("Smile!")
             camera_capture("image.jpg")
-            upload_to_server("image.jpg")
+            # upload_to_server("image.jpg")
 
         pad0alreadyPressed = pad0pressed
         
         time.sleep(0.1)
+
+capture_loop()
