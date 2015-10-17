@@ -1,0 +1,29 @@
+import RPi.GPIO as GPIO
+import time
+import picamera
+
+def capture_loop():
+
+    camera = picamera.PiCamera()
+    
+    GPIO.setmode(GPIO.BCM)
+
+    # Set the GPIO input pins
+    pad0 = 22
+    
+    GPIO.setup(pad0, GPIO.IN)
+    
+    pad0alreadyPressed = False
+    
+     
+    while True:
+        pad0pressed = not GPIO.input(pad0)
+        
+        if pad0pressed and not pad0alreadyPressed:
+            time.sleep(3)
+            camera_capture("image.jpg")
+            upload_to_server("image.jpg")
+
+        pad0alreadyPressed = pad0pressed
+        
+        time.sleep(0.1)
