@@ -26,7 +26,7 @@ def capture_loop():
             print("Smile!")
             camera.capture("image.jpg")
             # upload_to_server("image.jpg")
-            push_post("image.jpg", "Test")
+            post.push_post("image.jpg", "Test")
 
         pad0alreadyPressed = pad0pressed
         
