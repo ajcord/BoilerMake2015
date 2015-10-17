@@ -8,8 +8,8 @@ def combineImages():
     a = initialImage.load() #loads pixel data
     b = stickerImage.load()
 
-    for (int w = 0; w < stickerSize[0]; w++) :#width
-        for (int h = 0; h < stickerSize[1]; h++) : #height
+    for w in stickerSize[0] :#width
+        for h in stickerSize[1] : #height
             a[w, h] = (a[w,h] * 0.5() + (b[w,h] * 0.5)
 
 
