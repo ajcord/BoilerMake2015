@@ -38,7 +38,7 @@ def capture_loop():
             time.sleep(0.5)
             GPIO.output(led, False)
             # upload_to_server("image.jpg")
-            twitterpost.push_post("image.jpg", quotes[random.randrange(0, quotes.length + 1)])
+            twitterpost.push_post("image.jpg", quotes[random.randrange(0, len(quotes) + 1)])
 
         pad0alreadyPressed = pad0pressed
 
