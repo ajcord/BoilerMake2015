@@ -2,11 +2,10 @@ import RPi.GPIO as GPIO
 import time
 import picamera
 import twitterpost
-import random
+import text_pool_selector
 
 
 def capture_loop():
-    quotes = ["Happy Hacking!", "Pumpkin Pi?", "Boilermake? Try Pumpkinmake!", "Look ma, I'm famous!"]
 
     camera = picamera.PiCamera()
 
@@ -38,7 +37,7 @@ def capture_loop():
             time.sleep(0.5)
             GPIO.output(led, False)
             # upload_to_server("image.jpg")
-            twitterpost.push_post("image.jpg", quotes[random.randrange(0, len(quotes) + 1)])
+            twitterpost.push_post("image.jpg", text_pool_selector.getRandomQuote())
 
         pad0alreadyPressed = pad0pressed
 
