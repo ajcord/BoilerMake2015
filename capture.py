@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 import picamera
-import post
+import twitterpost
 
 def capture_loop():
 
@@ -34,7 +34,7 @@ def capture_loop():
             time.sleep(0.5)
             GPIO.output(led, False)
             # upload_to_server("image.jpg")
-            post.push_post("image.jpg", "Test")
+            twitterpost.push_post("image.jpg", "Test")
 
         pad0alreadyPressed = pad0pressed
         
