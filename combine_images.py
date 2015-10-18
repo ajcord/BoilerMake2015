@@ -8,7 +8,7 @@ def addSticker():
         index = random.randint(0, len(imageArray))
         stickerImage = Image.open("images/"+imageArray[index]+".png")
 
-        initialImage.paste(stickerImage, (random.randint(0, 520),random.randInt(0, 280)), stickerImage)
+        initialImage.paste(stickerImage, (random.randint(0, 520),random.randint(0, 280)), stickerImage)
     else :
         print("No sticker added")
 
