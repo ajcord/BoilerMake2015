@@ -4,7 +4,7 @@ import random
 def addSticker():
     initialImage = Image.open("image.jpg")
     if (random.randint(0, 2) == 0):
-        imageArray = ["creepy", "ghost", "skeleton"]
+        imageArray = ["creepy", "ghost", "skeleton", "web"]
         index = random.randint(0, len(imageArray))
         stickerImage = Image.open("images/"+imageArray[index]+".png")
 
