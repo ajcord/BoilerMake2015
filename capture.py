@@ -37,9 +37,9 @@ def capture_loop():
             camera.capture("image.jpg")
             time.sleep(0.5)
             GPIO.output(led, False)
-            # upload_to_server("image.jpg")
-            twitterpost.push_post("image.jpg", text_pool_selector.getRandomQuote())
-            combine_images.combineImages()
+            combine_images.addSticker()
+            twitterpost.push_post("blended.jpg", text_pool_selector.getRandomQuote())
+
 
         pad0alreadyPressed = pad0pressed
 
