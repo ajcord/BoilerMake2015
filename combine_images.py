@@ -10,6 +10,6 @@ def addSticker():
 
         initialImage.paste(stickerImage, (random.randint(0, 520),random.randInt(0, 280)), stickerImage)
     else :
-        #don't add sticker
+        print("No sticker added")
 
     initialImage.save("blended.jpg", quality=95)
