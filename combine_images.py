@@ -3,7 +3,7 @@ import random
 
 def addSticker():
     initialImage = Image.open("image.jpg")
-    if (random.randint(0, 5) >=2):
+    if (random.randint(0, 8) >=2):
         imageArray = ["creepy", "ghost", "skeleton", "web", "Jack-o-Lantern","trump"]
         index = random.randint(0, len(imageArray) - 1)
         print(index)
