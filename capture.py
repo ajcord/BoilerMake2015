@@ -34,6 +34,7 @@ def capture_loop():
             time.sleep(0.5)
             GPIO.output(led, True)
             camera.vflip =True
+            camera.hflip = True
             camera.capture("image.jpg")
             time.sleep(0.5)
             GPIO.output(led, False)
