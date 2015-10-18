@@ -3,10 +3,10 @@ import random
 
 def addSticker():
     initialImage = Image.open("image.jpg")
-    if (random.randint(0, 2) == 1):
+    if (random.randint(0, 2) == 0):
         imageArray = ["creepy", "ghost", "skeleton"]
-        imageString = random.randint(0, len(imageArray) - 1)
-        stickerImage = Image.open("images/"+imageString+".png")
+        index = random.randint(0, len(imageArray))
+        stickerImage = Image.open("images/"+imageArray[index]+".png")
 
         initialImage.paste(stickerImage, (random.randint(0, 520),random.randInt(0, 280)), stickerImage)
     else :
